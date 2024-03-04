@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Card from "@/components/Card.astro";
+import Section from "@/components/Section.astro";
+import ProfileIcon from "@/components/icons/Profile.astro";
+import ProjectIcon from "@/components/icons/Project.astro";
+import SkillIcon from "@/components/icons/Skill.astro";
+---
+
+<Layout title="Silvio">
+  <main>
+    <Section class="py-44" id="inicio">
+      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-2 pb-4">
+        Hola, soy Silvio
+      </h1>
+      <h2 class="text-xl opacity-90 text-pretty">
+        <span class="text-green-300/90">Desarrollador de Aplicaciones Web</span>
+        con experiencia full-stack. Me encanta hacer <span
+          class="text-blue-200/80">mágia con el teclado y el ratón.</span
+        >
+      </h2>
+    </Section>
+
+    <Section id="proyectos">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/90"
+      >
+        <ProjectIcon clas="size-8" /> Proyectos
+      </h2>
+    </Section>
+
+    <Section id="habilidades">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/90"
+      >
+        <SkillIcon clas="size-8" /> Habilidades
+      </h2>
+    </Section>
+
+    <Section id="sobre-mi">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/90"
+      >
+        <ProfileIcon clas="size-8" /> Sobre mi
+      </h2>
+
+      <article
+        class="flex flex-col md:flex-row gap-8 justify-center items-center"
+      >
+        <div
+          class="[&>p]:mb-4 [&>p>strong]:text-green-300 [&>p>strong]:font-semibold text-pretty order-2 md:order-1"
+        >
+          <p>
+            Me llamo Silvio y soy de Galicia. Con 13 años y gracias a Scratch
+            descubrí el mundo de la programación. Ahora, como <strong>
+              Técnico Superior en Desarrollo de Aplicaciones Web</strong
+            >, tengo un dominio sólido de varios lenguajes de programación.
+          </p>
+          <p>
+            Durante mi ciclo superior, colaboré con mis compañeros, brindándoles
+            <strong>ayuda en el desarrollo del backend</strong>, mientras que
+            ellos me asistían en otros aspectos. Creo firmemente en la
+            importancia de <strong>
+              trabajar en conjunto y aprender mutuamente</strong
+            >, ya que considero que es una de las mejores formas de adquirir
+            conocimientos y habilidades.
+          </p>
+          <p>
+            Tengo experiencia en el desarrollo web como <strong
+              >programador Full-Stack</strong
+            >, aunque mi preferencia se inclina hacia el trabajo en el backend o
+            programación pura.
+          </p>
+        </div>
+      </article>
+    </Section>
+  </main>
+</Layout>
