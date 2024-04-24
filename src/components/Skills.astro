@@ -1,0 +1,181 @@
+---
+import CSS from "./icons/skills/CSS.astro";
+import HTML from "./icons/skills/HTML.astro";
+import Git from "./icons/skills/Git.astro";
+import Vercel from "./icons/skills/Vercel.astro";
+
+import MySQL from "./icons/skills/MySQL.astro";
+import MongoDB from "./icons/skills/MongoDB.astro";
+import PostgreSQL from "./icons/skills/PostgreSQL.astro";
+
+import Java from "./icons/skills/Java.astro";
+import PHP from "./icons/skills/PHP.astro";
+import Python from "./icons/skills/Python.astro";
+import JS from "./icons/skills/JS.astro";
+import TS from "./icons/skills/TS.astro";
+
+import Tailwind from "./icons/skills/Tailwind.astro";
+import Spring from "./icons/skills/Spring.astro";
+import Django from "./icons/skills/Django.astro";
+import Laravel from "./icons/skills/Laravel.astro";
+import Ast from "./icons/skills/Ast.astro";
+import React from "./icons/skills/React.astro";
+import Angular from "./icons/skills/Angular.astro";
+import BootStrap from "./icons/skills/BootStrap.astro";
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-orange-950 text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-cyan-950 text-white",
+    icon: CSS,
+  },
+  GIT: {
+    name: "Git",
+    class: "bg-orange-950 text-white hover:opacity-75",
+    icon: Git,
+    link: "https://git-scm.com",
+  },
+  VERCEL: {
+    name: "Vercel",
+    class: "bg-zinc-700 text-white",
+    icon: Vercel,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-yellow-900 text-white",
+    icon: MySQL,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-lime-950 text-white",
+    icon: MongoDB,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-cyan-950 text-white",
+    icon: PostgreSQL,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-orange-950 text-white",
+    icon: Java,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-zinc-800 text-white",
+    icon: PHP,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-cyan-950 text-white",
+    icon: Python,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-yellow-900 text-white",
+    icon: JS,
+  },
+  TS: {
+    name: "TypeScript",
+    class: "bg-cyan-950 text-white",
+    icon: TS,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-lime-950 text-white",
+    icon: Spring,
+  },
+  DJANGO: {
+    name: "Django",
+    class: "bg-teal-950 text-white",
+    icon: Django,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-orange-950 text-white",
+    icon: Laravel,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-zinc-800 text-white",
+    icon: Ast,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-cyan-950 text-white",
+    icon: React,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-fuchsia-950 text-white",
+    icon: Angular,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-cyan-950 text-white",
+    icon: Tailwind,
+  },
+  BOOTSTAP: {
+    name: "BootStrap",
+    class: "bg-fuchsia-950 text-white",
+    icon: BootStrap,
+  },
+};
+const GROUPS = [
+  {
+    title: "Basics",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.GIT, TAGS.VERCEL],
+  },
+  {
+    title: "Bases de datos",
+    tags: [TAGS.MYSQL, TAGS.MONGODB, TAGS.POSTGRESQL],
+  },
+  {
+    title: "Lenguajes",
+    tags: [TAGS.JAVA, TAGS.PHP, TAGS.PYTHON, TAGS.JS, TAGS.TS],
+  },
+  {
+    title: "Frameworks",
+    tags: [
+      TAGS.SPRING,
+      TAGS.DJANGO,
+      TAGS.LARAVEL,
+      TAGS.ASTRO,
+      TAGS.REACT,
+      TAGS.ANGULAR,
+      TAGS.TAILWIND,
+      TAGS.BOOTSTAP,
+    ],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-4">
+  {
+    GROUPS.map(({ title, tags }) => (
+      <div class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-base ${tag.class} py-2 px-4 `}
+                  >
+                    <tag.icon class="size-6" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
