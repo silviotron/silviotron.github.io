@@ -22,6 +22,8 @@ import Ast from "./icons/skills/Ast.astro";
 import React from "./icons/skills/React.astro";
 import Angular from "./icons/skills/Angular.astro";
 import BootStrap from "./icons/skills/BootStrap.astro";
+import NodeJS from "./icons/skills/NodeJS.astro";
+import Express from "./icons/skills/Express.astro";
 
 const TAGS = {
   HTML: {
@@ -36,7 +38,7 @@ const TAGS = {
   },
   GIT: {
     name: "Git",
-    class: "bg-orange-950 text-white hover:opacity-75",
+    class: "bg-orange-950 text-white",
     icon: Git,
     link: "https://git-scm.com",
   },
@@ -44,6 +46,11 @@ const TAGS = {
     name: "Vercel",
     class: "bg-zinc-700 text-white",
     icon: Vercel,
+  },
+  NODEJS: {
+    name: "NodeJS",
+    class: "bg-lime-950 text-white",
+    icon: NodeJS,
   },
   MYSQL: {
     name: "MySQL",
@@ -115,6 +122,11 @@ const TAGS = {
     class: "bg-fuchsia-950 text-white",
     icon: Angular,
   },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-zinc-800 text-white",
+    icon: Express,
+  },
   TAILWIND: {
     name: "Tailwind",
     class: "bg-cyan-950 text-white",
@@ -129,7 +141,7 @@ const TAGS = {
 const GROUPS = [
   {
     title: "Basics",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.GIT, TAGS.VERCEL],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.GIT, TAGS.VERCEL, TAGS.NODEJS],
   },
   {
     title: "Bases de datos",
@@ -148,6 +160,7 @@ const GROUPS = [
       TAGS.ASTRO,
       TAGS.REACT,
       TAGS.ANGULAR,
+      TAGS.EXPRESS,
       TAGS.TAILWIND,
       TAGS.BOOTSTAP,
     ],

@@ -1,19 +1,139 @@
 ---
+import CSS from "./icons/skills/CSS.astro";
+import HTML from "./icons/skills/HTML.astro";
+import Git from "./icons/skills/Git.astro";
+import GitHub from "./icons/skills/GitHub.astro";
+
+import Vercel from "./icons/skills/Vercel.astro";
+
+import MySQL from "./icons/skills/MySQL.astro";
+import MongoDB from "./icons/skills/MongoDB.astro";
+import PostgreSQL from "./icons/skills/PostgreSQL.astro";
+
+import Java from "./icons/skills/Java.astro";
+import PHP from "./icons/skills/PHP.astro";
+import Python from "./icons/skills/Python.astro";
+import JS from "./icons/skills/JS.astro";
+import TS from "./icons/skills/TS.astro";
+
+import Tailwind from "./icons/skills/Tailwind.astro";
+import Spring from "./icons/skills/Spring.astro";
+import Django from "./icons/skills/Django.astro";
+import Laravel from "./icons/skills/Laravel.astro";
+import Ast from "./icons/skills/Ast.astro";
+import React from "./icons/skills/React.astro";
+import Angular from "./icons/skills/Angular.astro";
+import BootStrap from "./icons/skills/BootStrap.astro";
+import NodeJS from "./icons/skills/NodeJS.astro";
+import LinkButton from "./LinkButton.astro";
+import Link from "./icons/Link.astro";
+
 const TAGS = {
+  HTML: {
+    name: "HTML",
+    class: "bg-orange-950 text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-cyan-950 text-white",
+    icon: CSS,
+  },
+  GIT: {
+    name: "Git",
+    class: "bg-orange-950 text-white hover:opacity-75",
+    icon: Git,
+    link: "https://git-scm.com",
+  },
+  VERCEL: {
+    name: "Vercel",
+    class: "bg-zinc-700 text-white",
+    icon: Vercel,
+  },
   NODEJS: {
-    name: "Node.js",
-    class: "bg-[#003159] text-white",
-    icon: "NodeJS",
+    name: "NodeJS",
+    class: "bg-lime-950 text-white hover:opacity-75",
+    icon: NodeJS,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-yellow-900 text-white",
+    icon: MySQL,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-lime-950 text-white",
+    icon: MongoDB,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-cyan-950 text-white",
+    icon: PostgreSQL,
+  },
+  JAVA: {
+    name: "Java",
+    class: "bg-orange-950 text-white",
+    icon: Java,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-zinc-800 text-white",
+    icon: PHP,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-cyan-950 text-white",
+    icon: Python,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-yellow-900 text-white",
+    icon: JS,
+  },
+  TS: {
+    name: "TypeScript",
+    class: "bg-cyan-950 text-white",
+    icon: TS,
+  },
+  SPRING: {
+    name: "Spring",
+    class: "bg-lime-950 text-white",
+    icon: Spring,
+  },
+  DJANGO: {
+    name: "Django",
+    class: "bg-teal-950 text-white",
+    icon: Django,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-orange-950 text-white",
+    icon: Laravel,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-zinc-800 text-white",
+    icon: Ast,
   },
   REACT: {
     name: "React",
-    class: "bg-[#003159] text-white",
-    icon: "React",
+    class: "bg-cyan-950 text-white",
+    icon: React,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-fuchsia-950 text-white",
+    icon: Angular,
   },
   TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: "Tailwind",
+    name: "Tailwind",
+    class: "bg-cyan-950 text-white",
+    icon: Tailwind,
+  },
+  BOOTSTAP: {
+    name: "BootStrap",
+    class: "bg-fuchsia-950 text-white",
+    icon: BootStrap,
   },
 };
 const PROJECTS = [
@@ -26,5 +146,66 @@ const PROJECTS = [
     image: "/projects/CIApp.webp",
     tags: [TAGS.NODEJS, TAGS.REACT],
   },
+  {
+    title: "Dark Rebellion",
+    description:
+      "Landing page de un proyecto de moda que incluye un catalogo de imagenes y un lookbook ",
+    link: "https://rosalia728.github.io/",
+    github: "https://github.com/rosalia728/rosalia728.github.io",
+    image: "/projects/DR.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
 ];
 ---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8  overflow-clip rounded-3xl">
+            <img
+              alt="Proyecto"
+              class="object-cover object-top w-full"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-200 ">{title}</h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-2 text-gray-300">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Codigo
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  web
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
