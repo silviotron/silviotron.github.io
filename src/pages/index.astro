@@ -93,17 +93,5 @@ import Linkedin from "@/components/icons/Linkedin.astro";
         </div>
       </article>
     </Section>
-    <script>
-      function copyToClipboard(text: string) {
-        navigator.clipboard
-          .writeText(text)
-          .then(() => {
-            console.log("Texto copiado al portapapeles: " + text);
-          })
-          .catch((err) => {
-            console.error("Error al copiar el texto: ", err);
-          });
-      }
-    </script>
   </main>
 </Layout>

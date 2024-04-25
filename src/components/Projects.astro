@@ -2,7 +2,6 @@
 import CSS from "./icons/skills/CSS.astro";
 import HTML from "./icons/skills/HTML.astro";
 import Git from "./icons/skills/Git.astro";
-import GitHub from "./icons/skills/GitHub.astro";
 
 import Vercel from "./icons/skills/Vercel.astro";
 
@@ -190,12 +189,7 @@ const PROJECTS = [
             </ul>
             <div class="mt-2 text-gray-300">{description}</div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Codigo
-                </LinkButton>
-              )}
+              {github && <LinkButton href={github}>Codigo</LinkButton>}
               {link && (
                 <LinkButton href={link}>
                   <Link class="size-4" />
