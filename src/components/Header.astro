@@ -34,12 +34,12 @@ const navItems = [
   class="flex justify-between items-center py-5 mx-auto sticky top-0 z-10"
 >
   <nav
-    class="flex flex-row gap-x-10 items-center rounded-full bg-black/90 pr-4"
+    class="flex flex-row gap-x-10 items-center rounded-full bg-black/90 pr-4 pl-4 md:pl-0"
   >
     <a
       href="https://www.linkedin.com/in/silvio-novas-mart%C3%ADnez/"
       target="_blank"
-      class="rounded-full size-12 overflow-hidden"
+      class="rounded-full size-12 overflow-hidden hidden md:block"
     >
       <img
         class="rounded-full size-12 hover:scale-125 transition-all duration-100"
@@ -51,7 +51,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-green-300/90"
+          class="relative block px-2 py-2 whitespace-nowrap transition hover:text-green-300/90"
           aria-label={link.label}
           href={link.url}
         >
@@ -113,7 +113,7 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/20 ring-white/10;
     }
   }
 </style>
