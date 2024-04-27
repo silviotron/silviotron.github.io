@@ -40,7 +40,7 @@ const TAGS = {
   },
   GIT: {
     name: "Git",
-    class: "bg-orange-950 text-white hover:opacity-75",
+    class: "bg-orange-950 text-white",
     icon: Git,
     link: "https://git-scm.com",
   },
@@ -51,7 +51,7 @@ const TAGS = {
   },
   NODEJS: {
     name: "NodeJS",
-    class: "bg-lime-950 text-white hover:opacity-75",
+    class: "bg-lime-950 text-white",
     icon: NodeJS,
   },
   MYSQL: {
@@ -137,22 +137,40 @@ const TAGS = {
 };
 const PROJECTS = [
   {
-    title: "Country info app",
-    description:
-      "web donde puedes buscar un pais y visualizar una gran variedad de datos sobre dicho país. Creada desde cero con Node.js, express, React y  utilizando el api de 'https://restcountries.com' a traves de el backend",
-    link: "https://vercel-app-frontend-seven.vercel.app",
-    github: "https://github.com/silviotron/country-info-app",
-    image: "/projects/CIApp.webp",
-    tags: [TAGS.NODEJS, TAGS.REACT],
-  },
-  {
     title: "Dark Rebellion",
     description:
       "Landing page de un proyecto de moda que incluye un catalogo de imagenes y un lookbook ",
     link: "https://rosalia728.github.io/",
     github: "https://github.com/rosalia728/rosalia728.github.io",
     image: "/projects/DR.webp",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    tags: [TAGS.ASTRO, TAGS.TS, TAGS.HTML, TAGS.TAILWIND],
+  },
+  {
+    title: "Calceta",
+    description:
+      "E-commerce para una tienda de labores cuenta con sistema de administracion para gestionar roles, usuarios, productos, categorias, marcas y pedidos",
+    link: "http://calceta.rf.gd/",
+    github: "https://github.com/silviotron/proyecto_final_DAW",
+    image: "/projects/calceta.webp",
+    tags: [TAGS.PHP, TAGS.MYSQL, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
+  },
+  {
+    title: "URLtron",
+    description:
+      "Acortador de urls con usuarios creado utilizando Django y SQLite",
+    link: "https://silviotron.pythonanywhere.com//",
+    github: "https://github.com/silviotron/URLtron",
+    image: "/projects/URLtron.webp",
+    tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
+  },
+  {
+    title: "Country info app",
+    description:
+      "Web donde puedes buscar un pais y visualizar una gran variedad de datos sobre dicho país. Creada desde cero con Node.js, express, React y  utilizando el api de 'https://restcountries.com' a traves de el backend",
+    link: "https://vercel-app-frontend-seven.vercel.app",
+    github: "https://github.com/silviotron/country-info-app",
+    image: "/projects/CIApp.webp",
+    tags: [TAGS.NODEJS, TAGS.REACT, TAGS.JS, TAGS.HTML],
   },
 ];
 ---
@@ -163,12 +181,14 @@ const PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8  overflow-clip rounded-3xl">
-            <img
-              alt="Proyecto"
-              class="object-cover object-top w-full"
-              loading="lazy"
-              src={image}
-            />
+            <a href={link}>
+              <img
+                alt="Proyecto"
+                class="object-cover object-top w-full hover:scale-110 transition duration-300 ease-in-out"
+                loading="lazy"
+                src={image}
+              />
+            </a>
           </div>
         </div>
 
@@ -177,7 +197,7 @@ const PROJECTS = [
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-row mb-2 gap-x-2">
               {tags.map((tag) => (
-                <li>
+                <li class="hover:scale-110 transition duration-100 ease-in-out select-none">
                   <span
                     class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
                   >
@@ -189,9 +209,13 @@ const PROJECTS = [
             </ul>
             <div class="mt-2 text-gray-300">{description}</div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && <LinkButton href={github}>Codigo</LinkButton>}
+              {github && (
+                <LinkButton href={github} target="_blank">
+                  Codigo
+                </LinkButton>
+              )}
               {link && (
-                <LinkButton href={link}>
+                <LinkButton href={link} target="_blank">
                   <Link class="size-4" />
                   web
                 </LinkButton>
