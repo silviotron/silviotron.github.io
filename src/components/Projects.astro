@@ -26,7 +26,7 @@ import BootStrap from "./icons/skills/BootStrap.astro";
 import NodeJS from "./icons/skills/NodeJS.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "./icons/Link.astro";
-import GitHub from "./icons/skills/GitHub.astro";
+import GH from "./icons/skills/GH.astro";
 
 const TAGS = {
   HTML: {
@@ -159,7 +159,7 @@ const PROJECTS = [
     title: "URLtron",
     description:
       "Acortador de urls con usuarios creado utilizando Django y SQLite",
-    link: "https://silviotron.pythonanywhere.com//",
+    link: "https://silviotron.pythonanywhere.com",
     github: "https://github.com/silviotron/URLtron",
     image: "/projects/URLtron.webp",
     tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
@@ -216,7 +216,7 @@ const PROJECTS = [
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
                 <LinkButton href={github} target="_blank">
-                  <GitHub class="size-4" />
+                  <GH class="size-4" />
                   Codigo
                 </LinkButton>
               )}
