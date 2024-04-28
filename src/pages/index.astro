@@ -6,92 +6,71 @@ import ProjectIcon from "@/components/icons/Project.astro";
 import SkillIcon from "@/components/icons/Skill.astro";
 import Skills from "@/components/Skills.astro";
 import Projects from "@/components/Projects.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import Mail from "@/components/icons/Mail.astro";
-import Linkedin from "@/components/icons/Linkedin.astro";
-import CV from "@/components/icons/CV.astro";
+import Hero from "@/components/Hero.astro";
 ---
 
-<Layout title="Silvio">
+<Layout title="Silvio" description="Porfolio">
   <main class="px-4">
-    <Section class="py-32" id="inicio">
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-2 pb-4">
-        Hola, soy Silvio
-      </h1>
-      <h2 class="text-xl text-pretty mb-8">
-        <span class="text-green-300/90">Desarrollador de Aplicaciones Web</span>
-        con experiencia full-stack. Me encanta hacer <span
-          class="text-blue-200/80">mágia con el teclado y el ratón.</span
+    <Section class="py-16 md:py-36" id="inicio">
+      <Hero />
+    </Section>
+    <div class="space-y-24">
+      <Section id="proyectos">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
-      </h2>
-      <LinkButton href="mailto:silvionovasmartinez@gmail.com">
-        <Mail class="size-8" />
-      </LinkButton>
-      <LinkButton
-        href="https://www.linkedin.com/in/silvio-novas-mart%C3%ADnez/"
-        target="_Blanck"
-      >
-        <Linkedin class="size-8" />
-      </LinkButton>
-      <LinkButton href="Silvio_CV_ES.pdf" target="_Blanck">
-        <CV class="size-8" />
-      </LinkButton>
-    </Section>
+          <ProjectIcon clas="size-8" /> Proyectos
+        </h2>
+        <Projects />
+      </Section>
 
-    <Section id="proyectos" class="pb-32">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/90"
-      >
-        <ProjectIcon clas="size-8" /> Proyectos
-      </h2>
-      <Projects />
-    </Section>
-
-    <Section id="habilidades" class="pb-32">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/90"
-      >
-        <SkillIcon clas="size-8" /> Habilidades
-      </h2>
-      <Skills />
-    </Section>
-
-    <Section id="sobre-mi" class="pb-64">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white/90"
-      >
-        <ProfileIcon clas="size-8" /> Sobre mi
-      </h2>
-
-      <article
-        class="flex flex-col md:flex-row gap-8 justify-center items-center"
-      >
-        <div
-          class="[&>p]:mb-4 [&>p>strong]:text-green-300 [&>p>strong]:font-semibold text-pretty order-2 md:order-1"
+      <Section id="habilidades">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
         >
-          <p>
-            Me llamo Silvio y soy de Galicia. Con 13 años y gracias a Scratch
-            descubrí el mundo de la programación. Ahora, como <strong>
-              Técnico Superior en Desarrollo de Aplicaciones Web</strong
-            >, tengo un dominio sólido de varios lenguajes de programación.
-          </p>
-          <p>
-            Durante mi ciclo superior, colaboré con mis compañeros, brindándoles
-            <strong>ayuda en el desarrollo del backend</strong>, mientras que
-            ellos me asistían en otros aspectos. Creo firmemente en la
-            importancia de <strong>
-              trabajar en conjunto y aprender mutuamente</strong
-            >, ya que considero que es una de las mejores formas de adquirir
-            conocimientos y habilidades.
-          </p>
-          <p>
-            Tengo experiencia en el desarrollo web como <strong
-              >programador Full-Stack</strong
-            >, aunque mi preferencia se inclina hacia el trabajo en el backend o
-            programación pura.
-          </p>
-        </div>
-      </article>
-    </Section>
+          <SkillIcon clas="size-8" /> Habilidades
+        </h2>
+        <Skills />
+      </Section>
+
+      <Section id="sobre-mi" class="pb-32">
+        <h2
+          class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/90 dark:text-white"
+        >
+          <ProfileIcon clas="size-8" /> Sobre mi
+        </h2>
+
+        <article
+          class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+        >
+          <div
+            class="[&>p]:mb-4 [&>p>strong]:text-green-400 dark:[&>p>strong]:text-green-300/90 [&>p>strong]:font-normal text-pretty order-2 md:order-1"
+          >
+            <p>
+              Me llamo Silvio y soy de Galicia. Con 13 años y gracias a Scratch
+              descubrí el mundo de la programación. Ahora, como <strong>
+                Técnico Superior en Desarrollo de Aplicaciones Web</strong
+              >, tengo un dominio sólido de varios lenguajes de programación.
+            </p>
+            <p>
+              Durante mi ciclo superior, colaboré con mis compañeros,
+              brindándoles
+              <strong>ayuda en el desarrollo del backend</strong>, mientras que
+              ellos me asistían en otros aspectos. Creo firmemente en la
+              importancia de <strong>
+                trabajar en conjunto y aprender mutuamente</strong
+              >, ya que considero que es una de las mejores formas de adquirir
+              conocimientos y habilidades.
+            </p>
+            <p>
+              Tengo experiencia en el desarrollo web como <strong
+                >programador Full-Stack</strong
+              >, aunque mi preferencia se inclina hacia el trabajo en el backend
+              o programación pura.
+            </p>
+          </div>
+        </article>
+      </Section>
+    </div>
   </main>
 </Layout>

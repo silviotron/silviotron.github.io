@@ -1,0 +1,35 @@
+---
+import LinkButton from "./LinkButton.astro";
+import CV from "./icons/CV.astro";
+import Linkedin from "./icons/Linkedin.astro";
+import Mail from "./icons/Mail.astro";
+---
+
+<div class="max-w-xl">
+  <h1 class="text-5xl font-bold flex flex-row gap-x-2 pb-4 pt-10">
+    Hola, soy Silvio
+  </h1>
+  <h2 class="text-xl text-pretty mb-8">
+    <span class="text-green-400 dark:text-green-300/90"
+      >Desarrollador de Aplicaciones Web</span
+    >
+    con experiencia full-stack. Me encanta hacer <span
+      class="text-blue-400 dark:text-blue-300/90"
+      >mágia con el teclado y el ratón.</span
+    >
+  </h2>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <LinkButton href="mailto:silvionovasmartinez@gmail.com">
+      <Mail class="size-8" />
+    </LinkButton>
+    <LinkButton
+      href="https://www.linkedin.com/in/silvio-novas-mart%C3%ADnez/"
+      target="_Blanck"
+    >
+      <Linkedin class="size-8" />
+    </LinkButton>
+    <LinkButton href="Silvio_CV_ES.pdf" target="_Blanck">
+      <CV class="size-8" />
+    </LinkButton>
+  </nav>
+</div>

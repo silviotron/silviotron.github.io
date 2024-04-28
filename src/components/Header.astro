@@ -1,5 +1,6 @@
 ---
 import profile from "../assets/silvio.jfif";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
   {
@@ -26,32 +27,33 @@ const navItems = [
     title: "Contacto",
     label: "contacto",
     url: "mailto:silvionovasmartinez@gmail.com",
+    class: "hidden sm:block",
   },
 ];
 ---
 
 <header
-  class="flex justify-between items-center py-5 mx-auto sticky top-0 z-10"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex flex-row gap-x-10 items-center rounded-full bg-black/90 pr-4 pl-4 md:pl-0"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
     <a
       href="https://www.linkedin.com/in/silvio-novas-mart%C3%ADnez/"
       target="_blank"
-      class="rounded-full size-12 overflow-hidden hidden md:block"
+      class="rounded-full size-12 overflow-hidden hidden sm:block -translate-x-3"
     >
       <img
         class="rounded-full size-12 hover:scale-125 transition-all duration-100"
         src={profile}
-        alt="Silviotron profile"
+        alt="Silvio profile"
       />
     </a>
 
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 whitespace-nowrap transition hover:text-green-300/90"
+          class={`relative block px-2 py-2 whitespace-nowrap transition hover:text-green-400/90 dark:hover:text-green-300/90 ${link.class || ""}`}
           aria-label={link.label}
           href={link.url}
         >
@@ -59,6 +61,7 @@ const navItems = [
         </a>
       ))
     }
+    <ThemeToggle />
   </nav>
 </header>
 

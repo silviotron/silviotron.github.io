@@ -26,6 +26,7 @@ import BootStrap from "./icons/skills/BootStrap.astro";
 import NodeJS from "./icons/skills/NodeJS.astro";
 import LinkButton from "./LinkButton.astro";
 import Link from "./icons/Link.astro";
+import GitHub from "./icons/skills/GitHub.astro";
 
 const TAGS = {
   HTML: {
@@ -175,7 +176,7 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-y-32 md:gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
@@ -193,9 +194,11 @@ const PROJECTS = [
         </div>
 
         <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-200 ">{title}</h3>
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2 gap-y-2">
               {tags.map((tag) => (
                 <li class="hover:scale-110 transition duration-100 ease-in-out select-none">
                   <span
@@ -207,10 +210,13 @@ const PROJECTS = [
                 </li>
               ))}
             </ul>
-            <div class="mt-2 text-gray-300">{description}</div>
+            <div class="mt-2 text-gray-800 dark:text-gray-200">
+              {description}
+            </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
                 <LinkButton href={github} target="_blank">
+                  <GitHub class="size-4" />
                   Codigo
                 </LinkButton>
               )}
