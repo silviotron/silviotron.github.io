@@ -138,10 +138,19 @@ const TAGS = {
 };
 const PROJECTS = [
   {
+    title: "Mini-app",
+    description:
+      'Aplicación de búsqueda de jugadores de fútbol que permite realizar búsquedas a través de la API de <a class="text-blue-500 hover:underline" href="https://www.thesportsdb.com/free_sports_api">thesportsdb</a> y guardarlas en una base de datos, además de proporcionar estadísticas sobre las búsquedas guardadas. Tambien utiliza la API de <a class="text-blue-500 hover:underline" href="flagcdn.com">flagcdn</a> para las banderas.',
+    link: "http://mini-app.rf.gd",
+    github: "https://github.com/silviotron/mini-app",
+    image: "/projects/MA.webp",
+    tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.MYSQL, TAGS.HTML, TAGS.JS],
+  },
+  {
     title: "Dark Rebellion",
     description:
       "Landing page de un proyecto de moda que incluye un catalogo de imagenes y un lookbook ",
-    link: "https://rosalia728.github.io/",
+    link: "http://rosalia728.github.io",
     github: "https://github.com/rosalia728/rosalia728.github.io",
     image: "/projects/DR.webp",
     tags: [TAGS.ASTRO, TAGS.TS, TAGS.HTML, TAGS.TAILWIND],
@@ -150,7 +159,7 @@ const PROJECTS = [
     title: "Calceta",
     description:
       "E-commerce para una tienda de labores cuenta con sistema de administracion para gestionar roles, usuarios, productos, categorias, marcas y pedidos",
-    link: "http://calceta.rf.gd/",
+    link: "http://calceta.rf.gd",
     github: "https://github.com/silviotron/proyecto_final_DAW",
     image: "/projects/calceta.webp",
     tags: [TAGS.PHP, TAGS.MYSQL, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
@@ -159,19 +168,19 @@ const PROJECTS = [
     title: "URLtron",
     description:
       "Acortador de urls con usuarios creado utilizando Django y SQLite",
-    link: "https://silviotron.pythonanywhere.com",
+    link: "http://silviotron.pythonanywhere.com",
     github: "https://github.com/silviotron/URLtron",
     image: "/projects/URLtron.webp",
     tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
   },
   {
-    title: "Country info app",
+    title: "70s Beach Vacations",
     description:
-      "Web donde puedes buscar un pais y visualizar una gran variedad de datos sobre dicho país. Creada desde cero con Node.js, express, React y  utilizando el api de 'https://restcountries.com' a traves de el backend",
-    link: "https://vercel-app-frontend-seven.vercel.app",
-    github: "https://github.com/silviotron/country-info-app",
-    image: "/projects/CIApp.webp",
-    tags: [TAGS.NODEJS, TAGS.REACT, TAGS.JS, TAGS.HTML],
+      "Landing page de una collecion de moda que incluye un catalogo de imagenes y un lookbook ",
+    link: "http://punkat.vercel.app",
+    github: "https://github.com/rosalia728/punkat",
+    image: "/projects/70BV.webp",
+    tags: [TAGS.ASTRO, TAGS.TS, TAGS.HTML, TAGS.TAILWIND],
   },
 ];
 ---
@@ -182,7 +191,7 @@ const PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8  overflow-clip rounded-3xl">
-            <a href={link}>
+            <a href={link} target="_blank">
               <img
                 alt="Proyecto"
                 class="object-cover object-top w-full hover:scale-110 transition duration-300 ease-in-out"
@@ -211,7 +220,7 @@ const PROJECTS = [
               ))}
             </ul>
             <div class="mt-2 text-gray-800 dark:text-gray-200">
-              {description}
+              <Fragment set:html={description} />
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
