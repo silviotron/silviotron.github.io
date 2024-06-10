@@ -1,0 +1,22 @@
+---
+import Copy from "./icons/Copy.astro";
+
+const { copy } = Astro.props;
+---
+
+<button
+  title={copy}
+  role="link"
+  class="copy inline-flex items-center justify-center gap-2 px-3 py-2 space-x-2 text-base text-white transition bg-gray-400 max-w-fit rounded-2xl hover:text-blue-400 hover:border-blue-400 border-2 border-gray-400 hover:bg-gray-300 dark:border-gray-900 dark:bg-gray-900 dark:hover:bg-gray-950 dark:hover:border-blue-400"
+>
+  <Copy class="size-8" />
+</button>
+
+<script>
+  const button = document.querySelectorAll("button.copy")[0];
+  const copy: string = "" + button.getAttribute("title");
+
+  button.addEventListener("click", () => {
+    navigator.clipboard.writeText(copy);
+  });
+</script>
