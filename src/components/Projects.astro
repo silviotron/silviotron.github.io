@@ -138,15 +138,6 @@ const TAGS = {
 };
 const PROJECTS = [
   {
-    title: "Mini-app",
-    description:
-      'Aplicación de búsqueda de jugadores de fútbol que permite realizar búsquedas a través de la API de <a class="text-blue-500 hover:underline" href="https://www.thesportsdb.com/free_sports_api">thesportsdb</a> y guardarlas en una base de datos, además de proporcionar estadísticas sobre las búsquedas guardadas. Tambien utiliza la API de <a class="text-blue-500 hover:underline" href="flagcdn.com">flagcdn</a> para las banderas.',
-    link: "http://mini-app.rf.gd",
-    github: "https://github.com/silviotron/mini-app",
-    image: "/projects/MA.webp",
-    tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.MYSQL, TAGS.HTML, TAGS.JS],
-  },
-  {
     title: "Dark Rebellion",
     description:
       "Landing page de un proyecto de moda que incluye un catalogo de imagenes y un lookbook ",
@@ -156,18 +147,8 @@ const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.TS, TAGS.HTML, TAGS.TAILWIND],
   },
   {
-    title: "Calceta",
-    description:
-      "E-commerce para una tienda de labores cuenta con sistema de administracion para gestionar roles, usuarios, productos, categorias, marcas y pedidos",
-    link: "http://calceta.rf.gd",
-    github: "https://github.com/silviotron/proyecto_final_DAW",
-    image: "/projects/calceta.webp",
-    tags: [TAGS.PHP, TAGS.MYSQL, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
-  },
-  {
     title: "URLtron",
-    description:
-      "Acortador de urls con usuarios creado utilizando Django y SQLite",
+    description: "Acortador de urls con usuarios creado utilizando Django y SQLite",
     link: "http://silviotron.pythonanywhere.com",
     github: "https://github.com/silviotron/URLtron",
     image: "/projects/URLtron.webp",
@@ -181,6 +162,24 @@ const PROJECTS = [
     github: "https://github.com/silviotron/punkat",
     image: "/projects/70BV.webp",
     tags: [TAGS.ASTRO, TAGS.TS, TAGS.HTML, TAGS.TAILWIND],
+  },
+  {
+    title: "Calceta",
+    description:
+      "E-commerce para una tienda de labores cuenta con sistema de administracion para gestionar roles, usuarios, productos, categorias, marcas y pedidos",
+    link: "https://github.com/silviotron/proyecto_final_DAW",
+    github: "https://github.com/silviotron/proyecto_final_DAW",
+    image: "/projects/calceta.webp",
+    tags: [TAGS.PHP, TAGS.MYSQL, TAGS.HTML, TAGS.JS, TAGS.BOOTSTAP],
+  },
+  {
+    title: "Mini-app",
+    description:
+      'Aplicación de búsqueda de jugadores de fútbol que permite realizar búsquedas a través de la API de <a class="text-blue-500 hover:underline" href="https://www.thesportsdb.com/free_sports_api">thesportsdb</a> y guardarlas en una base de datos, además de proporcionar estadísticas sobre las búsquedas guardadas. Tambien utiliza la API de <a class="text-blue-500 hover:underline" href="flagcdn.com">flagcdn</a> para las banderas.',
+    link: "https://github.com/silviotron/mini-app",
+    github: "https://github.com/silviotron/mini-app",
+    image: "/projects/MA.webp",
+    tags: [TAGS.LARAVEL, TAGS.TAILWIND, TAGS.MYSQL, TAGS.HTML, TAGS.JS],
   },
 ];
 ---
@@ -203,9 +202,7 @@ const PROJECTS = [
         </div>
 
         <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
           <div class="flex flex-wrap mt-2">
             <ul class="flex flex-wrap mb-2 gap-x-2 gap-y-2">
               {tags.map((tag) => (
